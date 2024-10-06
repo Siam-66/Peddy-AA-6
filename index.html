@@ -1,11 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>assignment-6</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        .lato-af {
+        font-family: "Lato", sans-serif;
+        }
+        .color-1{
+            color: #0E7A81;
+        }
+        .color-2{
+            color: #131313B3 ;
+        }
+        .active{
+            background-color: #0E7A811A;
+            border: 1px solid #0E7A811A;
+        }
+    </style>
+
 </head>
-<body>
+<body class="lato-af " >
+    <header class="mb-5 container mx-auto">
+        <nav>
+            <div class="navbar bg-base-100"> 
+                <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                    </div>
+                    <ul
+                    tabindex="0"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Home</a></li>
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Shop</a></li>
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Contact</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-2xl"> <img src="assets/logo.webp" alt=""> Peddy</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-xl">
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Home</a></li>
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Shop</a></li>
+                    <li><a class="mr-3 hover:text-white hover:bg-[#0E7A81]">Contact</a></li>
+                </ul>
+                </div>
+                <div class="navbar-end">
+                    <div class="avatar placeholder">
+                        <div class=" border-gray-600 border w-10 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-500">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                              </svg>
+                              
+                          
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <section class="container mx-auto">
+        <div class="text-center flex-1 justify-center items-center ">
+                    <div class="flex justify-center items-center gap-3 mb-6">
+                    <p class="text-[#3f3e3eb3] text-xl font-bold">Bringing Families Together </p>
+        <img class="w-7" src="assets/love.png" alt="">
+        </div>
+        
+        <h1 class="text-6xl font-bold mb-7 ">Your Path to Adoption <br> Starts Here</h1>
+        <p class="color-2">Your path to adoption begins with support, care, and guidance at every step. We're here to <br> help you create the family you've been dreaming of.</p>
+        
+            <button class="bg-[#0E7A81] text-white py-2 px-3 mt-3 rounded-md">View More</button>
+        
+        <div class="flex justify-center items-center">
+            <img src="assets/pet.webp" alt="">
+        </div>
+        <div >
+            <h2 class="text-4xl font-bold mb-7">Adopt  Your  Best Friend</h2>
+            <p class="color-2">Adopt your best friend and bring home a lifetime of love and companionship. Start your journey <br> toward finding the perfect match today!</p>
+        </div>
+        </div>
+    </section>
+    <section class="container mx-auto mt-10">
+        <div class="flex justify-around mb-5">
+            <button class="flex justify-center items-center active text-xl font-bold py-4 px-10 rounded-full " >
+                <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
+                <p>Dogs</p>
+            </button>
+
+            <button class="flex justify-center items-center active text-xl font-bold py-4 px-10 rounded-full " >
+                <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
+                <p>Dogs</p>
+            </button>
+
+            <button class="flex justify-center items-center active text-xl font-bold py-4 px-10 rounded-full " >
+                <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
+                <p>Dogs</p>
+            </button>
+
+            <button class="flex justify-center items-center active text-xl font-bold py-4 px-10 rounded-full " >
+                <img class="w-10" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
+                <p>Dogs</p>
+            </button>
+        </div>
+        <div>
+        <p>Best Deal For you </p>
+        </div>
+    </section>
+    </main>
+
     
 </body>
-</html>
+</html>   
