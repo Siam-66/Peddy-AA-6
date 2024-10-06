@@ -33,7 +33,7 @@
             <div class="navbar bg-base-100"> 
                 <div class="navbar-start">
                 <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                    <div tabindex="0" role="button" class="btn btn-ghost md:hidden lg:hidden">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-5 w-5"
@@ -88,10 +88,14 @@
         
         <h1 class="md:text-6xl text-4xl font-bold mb-7 ">Your Path to Adoption <br> Starts Here</h1>
         <p class="color-2">Your path to adoption begins with support, care, and guidance at every step. We're here to <br> help you create the family you've been dreaming of.</p>
+            
+            <div class="mt-3">
+                <a class="bg-[#0E7A81] text-white py-2 px-3  rounded-md" href="#pets">View More</a>
+            </div>
+            
         
-            <button class="bg-[#0E7A81] text-white py-2 px-3 mt-3 rounded-md">View More</button>
         
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center mt-5 ">
             <img src="assets/pet.webp" alt="">
         </div>
         <div >
@@ -102,26 +106,13 @@
     </section>
     <section class="container mx-auto max-sm:p-5 mt-10">
 
-        <div class="flex justify-around mb-5">
-            <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
-                <img class="md:w-10 w-7" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
-                <p>Dogs</p>
-            </button>
+        <div id="categories" class="flex justify-around mb-5">
 
-            <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
+            <!-- <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
                 <img class="md:w-10 w-7" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
                 <p>Dogs</p>
-            </button>
+            </button> -->
 
-            <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
-                <img class="md:w-10 w-7" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
-                <p>Dogs</p>
-            </button>
-
-            <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
-                <img class="md:w-10 w-7" src="https://cdn-icons-png.flaticon.com/512/8876/8876600.png" alt="">
-                <p>Dogs</p>
-            </button>
         </div>
 
         <div class="flex items-center justify-between">
@@ -129,18 +120,46 @@
         <button class="bg-[#0E7A81] text-white py-2 px-3 mt-3 rounded-md">Sort by Price</button>
         </div>
 
-        <div class="mt-8 mb-10 md:flex ">
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5  gap-5 " >
+        <div class="mt-8 mb-10 md:flex  gap-5 ">
 
-                <div class="card bg-base-100 md:w-5/6  shadow-md">
+            <div id="pets" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5  gap-5 " >
+
+                <!-- <div class="card bg-base-100 md:w-6/6 lg:w-5/6 shadow-md">
                     <figure>
                       <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        src=" "
                         alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <h2 class="card-title">Mister Tartosh</h2>
+                      <div class="flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                          </svg>
+                        <p>Breed: <samp></samp></p>
+                      </div>
+
+                      <div class="flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                      </svg>
+                      <p>Birth: <samp></samp></p>
+                      </div>
+
+                      <div class="flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                          </svg>
+                          <p>Gender <span></span></p>
+                          
+                      </div>
+
+                      <div class="flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                          </svg>
+                          <p>Price: <samp></samp></p>
+                      </div>
 
                       <div class="card-actions flex justify-around items-center mt-5">
 
@@ -152,56 +171,11 @@
                         <button class="bg-white text-black hover:text-white hover:bg-[#0E7A81] p-2 rounded-md">Details</button>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="card bg-base-100 md:w-5/6  shadow-md">
-                    <figure>
-                      <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                    </figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card bg-base-100 md:w-5/6  shadow-md">
-                    <figure>
-                      <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                    </figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card bg-base-100 md:w-5/6  shadow-md">
-                    <figure>
-                      <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes" />
-                    </figure>
-                    <div class="card-body">
-                      <h2 class="card-title">Shoes!</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                      <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
+                </div> -->
 
             </div>
 
-            <div class="border lg:w-3/6 md:w-4/6 h-[500px] border-gray-300 rounded-md p-5"> 
+            <div class="border lg:w-3/6 md:w-4/6 h-[450px] border-gray-300 rounded-md p-5"> 
             <div>
                 
             </div>
@@ -272,6 +246,6 @@
             </fieldset>
         </form>
     </footer>
-    
+    <script src="JS/peddy.js"></script>
 </body>
 </html>   
