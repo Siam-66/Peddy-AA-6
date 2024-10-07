@@ -217,13 +217,13 @@ const displayDetails = (pet) => {
                 </svg>
                 <p>Price: ${pet.price?pet.price:"not found"}</p>
             </div>
-   <div class="divider">
-   </div>
-   <p class="font-bold text-xl">Description</p>
-   <p>${pet.pet_details}</p>
+<div class="divider">
+</div>
+<p class="font-bold text-xl">Description</p>
+<p>${pet.pet_details}</p>
     
     </div>
-  </div>
+</div>
     `;
 
     document.getElementById("custommodal").showModal();

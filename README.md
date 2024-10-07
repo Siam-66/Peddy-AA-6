@@ -18,4 +18,4 @@ Peddy is a web application designed for pet adoption, allowing users to browse a
 - **Let and Const**: Used for variable declarations to ensure block-scoping and immutability where appropriate.
 
 ## Live Link
-[Live Demo of Pet Categories App](https://your-deployed-project-link.com)
+[Live Link](https://assignment-peddy-6.netlify.app/)
