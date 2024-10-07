@@ -12,11 +12,12 @@ const displayPetCategories = (categories) => {
     const petCategories = document.getElementById("categories");
     petCategories.innerHTML = " "
     categories.forEach((item) => {
+    const { category, category_icon,  } = item;
     const buttonContainer = document.createElement("div");
     buttonContainer.innerHTML = `
-            <button class="flex justify-center items-center active text-xl font-bold md:py-4 md:px-10 p-4 rounded-full " >
-                <img class="md:w-10 w-7" src="${item.category_icon}" alt="">
-                <p>${item.category}</p>
+            <button id="btn-${category}" onclick="loadPetsCategory('${category}')" class="flex justify-center items-center border-[#0E7A81s1A] border  text-xl font-bold md:py-4 md:px-10 p-4 rounded-full category-btn " >
+                <img class="md:w-10 w-7" src="${category_icon}" alt="">
+                <p>${category}</p>
             </button>
     `;
 
@@ -41,10 +42,23 @@ const loadAllPets = () => {
 
 const displayAllPet = (pets) => {
     const allPetsShow = document.getElementById("pets");
+    allPetsShow.innerHTML = " "
+
+    if (pets.length == 0) {
+        allPetsShow.classList.remove("grid");
+        allPetsShow.innerHTML = `
+        <div class=" flex flex-col gap-5 justify-center items-center">
+        
+        <img src="assets/error.webp" /> 
+        <h2 class="text-center text-5xl font-bold"> No Information Available </h2> 
+        <p class="text-center">No pets available right now, but check back soon for your future furry friend!</p>
+        </div>`;
+    } else {
+        allPetsShow.classList.add("grid");
+    }
 
     pets.forEach((item) => {
-    
-    const{pet_name,gender,date_of_birth,price,image,breed,} = item
+    const{pet_name,gender,date_of_birth,price,image,breed,petId} = item
     
     const petsButtonContainer = document.createElement("div");
     petsButtonContainer.innerHTML = `
@@ -87,12 +101,14 @@ const displayAllPet = (pets) => {
 
                       <div class="card-actions flex justify-around items-center mt-5">
 
-                        <button><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:size-9 size-6 rounded-md hover:text-white hover:bg-[#0E7A81]">
+                        <button onclick = "likeImageShow('${image}')" class="bg-white text-black hover:text-white hover:bg-[#0E7A81] py-2 px-5  rounded-md"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:size-9 size-6 ">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
                         </svg>
                         </button>
+
                         <button class="bg-white text-black hover:text-white hover:bg-[#0E7A81]  p-2  rounded-md">Adopt</button>
-                        <button class="bg-white text-black hover:text-white hover:bg-[#0E7A81] p-2 rounded-md">Details</button>
+
+                        <button onclick="loadDetails('${petId}')" class="bg-white text-black hover:text-white hover:bg-[#0E7A81] p-2 rounded-md">Details</button>
                       </div>
                     </div>
                 </div>
@@ -104,3 +120,81 @@ const displayAllPet = (pets) => {
 };
 
 loadAllPets();
+
+// fetch and show by categories
+
+const removeActiveClass = () => {
+    const buttons = document.getElementsByClassName("category-btn");
+    console.log(buttons);
+    for (let btn of buttons) {
+    btn.classList.remove("active");
+    }
+};
+
+const loadPetsCategory = (category) => {
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
+    .then((res) => res.json())
+    .then((data) => {
+    
+        removeActiveClass();
+
+
+        const activeBtn = document.getElementById(`btn-${category}`);
+        activeBtn.classList.add("active");
+        displayAllPet(data.data);
+    })
+    .catch((error) => console.log(error));
+};
+
+// modal
+
+const loadDetails = async (id) => {
+    const uri = `https://openapi.programming-hero.com/api/peddy/pet/${id}`;
+    const res = await fetch(uri);
+    const data = await res.json();
+    displayDetails(data.petData); 
+};
+
+const displayDetails = (pet) => {
+    const detailContainer = document.getElementById("modal-content");
+
+    detailContainer.innerHTML = `
+    <figure class="">
+    <img class= "h-400 w-full rounded-2xl"
+        src=${pet.image}
+        alt="Shoes"
+        class="rounded-xl" />
+    </figure>
+    <div class="space-y-4">
+    <h2 class="card-title pt-4">${
+        pet.pet_name ? pet.pet_name : "not found"}</h2>
+    <div class="space-y-2 text-[#131313B3]">
+        <p><i class="fa-solid fa-cookie-bite"></i></i>Breed: ${pet.breed ? pet.breed : "not found"}
+        </p>
+        <p><i class="fa-solid fa-calendar-days"><i>Birth: ${pet.date_of_birth ? pet.date_of_birth :"not available"}</p>
+        <p><i class="fa-solid fa-venus-mars"></i>Gender: ${pet.gender ? pet.gender : "unknown"}
+        </p>
+        <p><i class="fa-solid fa-dollar-sign"></i>Price : ${pet.price ? pet.price : "not found"}</p>
+     </div>
+   <div class="divider">
+   </div>
+   <p class="font-bold text-xl">Description</p>
+   <p>${pet.pet_details}</p>
+    
+    </div>
+  </div>
+    `;
+
+    document.getElementById("custommodal").showModal();
+};
+
+// show image
+
+const likeImageShow = (image) => {
+    const imageContainer = document.getElementById("showImage");
+    const showImages = document.createElement("div");
+    showImages.innerHTML = `
+        <img class= "rounded-xl h-[100px] w-[100px] " src = "${image}" alt="">
+        `;
+    imageContainer.appendChild(showImages);
+};

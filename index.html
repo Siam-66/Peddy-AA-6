@@ -120,7 +120,7 @@
         <button class="bg-[#0E7A81] text-white py-2 px-3 mt-3 rounded-md">Sort by Price</button>
         </div>
 
-        <div class="mt-8 mb-10 md:flex  gap-5 ">
+        <div class="mt-8 mb-10 md:flex justify-evenly gap-5 ">
 
             <div id="pets" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-5  gap-5 " >
 
@@ -175,9 +175,9 @@
 
             </div>
 
-            <div class="border lg:w-3/6 md:w-4/6 h-[450px] border-gray-300 rounded-md p-5"> 
-            <div>
-                
+            <div  class=" mx-auto border lg:w-3/12  md:w-5/12 border-gray-300 rounded-md p-5"> 
+            <div id="showImage" class="grid grid-cols-2 gap-2">
+
             </div>
             </div>
 
@@ -246,6 +246,25 @@
             </fieldset>
         </form>
     </footer>
+
+    <dialog id="custommodal" class="modal">
+        <div class="modal-box">
+          <div id="modal-content">
+      
+          </div>
+          <div class="">
+            <form method="dialog" class="pt-4">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="w-full outline outline-1 outline-[#0E7A81] text-[#0E7A81] text-center btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+
+
     <script src="JS/peddy.js"></script>
 </body>
 </html>   
+
+
