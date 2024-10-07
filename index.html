@@ -247,6 +247,7 @@
         </form>
     </footer>
 
+<!-- 1st modal -->
     <dialog id="custommodal" class="modal">
         <div class="modal-box">
           <div id="modal-content">
@@ -261,7 +262,27 @@
         </div>
       </dialog>
 
+<!-- 2nd modal -->
 
+<div id="adoptModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6   rounded-lg max-w-sm w-full relative">
+        <button class="absolute  top-2 right-2 text-gray-600 hover:text-black" onclick="closeModal()">&#x2715;</button>
+        <div class="flex-col justify-center items-center">
+        <div class="flex justify-center items-center">
+        <img src="https://img.icons8.com/?size=80&id=TGGyAyBJKGRc&format=png" alt="">
+        </div>
+        <div class="text-center">
+            <h4 class="text-xl font-semibold mb-4">Congrates</h4>
+            <p>Thank you for choosing to adopt!</p>
+        </div>
+        <div class="flex justify-center items-center">
+            <img class="w-28" src="assets/321.gif" alt="">
+        </div>
+        
+        </div>
+
+    </div>
+</div>
 
     <script src="JS/peddy.js"></script>
 </body>

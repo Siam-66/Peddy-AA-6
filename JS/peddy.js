@@ -106,7 +106,7 @@ const displayAllPet = (pets) => {
                         </svg>
                         </button>
 
-                        <button class="bg-white text-black hover:text-white hover:bg-[#0E7A81]  p-2  rounded-md">Adopt</button>
+                        <button onclick="openModal()" class="bg-white text-black hover:text-white hover:bg-[#0E7A81]  p-2  rounded-md">Adopt</button>
 
                         <button onclick="loadDetails('${petId}')" class="bg-white text-black hover:text-white hover:bg-[#0E7A81] p-2 rounded-md">Details</button>
                       </div>
@@ -198,3 +198,24 @@ const likeImageShow = (image) => {
         `;
     imageContainer.appendChild(showImages);
 };
+
+function openModal() {
+    $('#adoptModal').modal('show');
+}
+
+// Function to open the modal
+function openModal() {
+    var modal = document.getElementById('adoptModal');
+    modal.classList.remove('hidden'); // Show the modal (remove hidden class)
+
+    // Set a timeout to hide the modal after 3 seconds
+    setTimeout(function() {
+        closeModal(); // Close the modal
+    }, 3000);
+}
+
+// Function to close the modal
+function closeModal() {
+    var modal = document.getElementById('adoptModal');
+    modal.classList.add('hidden'); // Hide the modal (add hidden class)
+}
