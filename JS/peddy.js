@@ -47,7 +47,7 @@ const displayAllPet = (pets) => {
     if (pets.length == 0) {
         allPetsShow.classList.remove("grid");
         allPetsShow.innerHTML = `
-        <div class=" flex flex-col gap-5 justify-center items-center">
+        <div class=" flex flex-col  gap-5 justify-center items-center ml-[30rem] ">
         
         <img src="assets/error.webp" /> 
         <h2 class="text-center text-5xl font-bold"> No Information Available </h2> 
@@ -64,25 +64,25 @@ const displayAllPet = (pets) => {
     petsButtonContainer.innerHTML = `
                     <div class="card bg-base-100 md:w-6/6 lg:w-5/6 shadow-md">
                     <figure>
-                    <img class="h-full w-full object-cover"
+                    <img class="h-full w-[480px] object-cover"
                         src="${image}"
                         alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                    <h2 class="card-title">${pet_name?pet_name:"not found"}</h2>
+                    <h2 class="card-title">${pet_name?pet_name:"not specified"}</h2>
                     
                     <div class="flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                         </svg>
-                        <p>Breed: ${breed?breed:"not found"}</p>
+                        <p>Breed: ${breed?breed:"unknown"}</p>
                     </div>
 
                     <div class="flex justify-center items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
-                    <p>Birth: ${date_of_birth?date_of_birth:"not available"}</p>
+                    <p>Birth: ${date_of_birth?date_of_birth:"not recorded"}</p>
                     </div>
 
                     <div class="flex justify-center items-center">
@@ -97,7 +97,7 @@ const displayAllPet = (pets) => {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
-                        <p>Price: ${price?price:"not found"}</p>
+                        <p>Price: ${price?price:"not available"}</p>
                     </div>
 
                     <div class="card-actions flex justify-around items-center mt-5">
@@ -182,25 +182,25 @@ const displayDetails = (pet) => {
 
     detailContainer.innerHTML = `
     <figure class="">
-    <img class= "h-400 w-full rounded-2xl"
+    <img class= " w-full rounded-2xl"
         src=${pet.image}
         alt="Shoes"
-        class="rounded-xl" />
+        />
     </figure>
     <div class="space-y-4">
-    <h2 class="card-title text-2xl pt-4">${pet.pet_name ? pet.pet_name : "not found"}</h2>
+    <h2 class="card-title text-2xl pt-4">${pet.pet_name ? pet.pet_name : "not specified"}</h2>
                 <div class="flex justify-start items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                 </svg>
-                <p>Breed: ${pet.breed?pet.breed:"not found"}</p>
+                <p>Breed: ${pet.breed?pet.breed:"unknown"}</p>
             </div>
 
             <div class="flex justify-start items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
             </svg>
-            <p>Birth: ${pet.date_of_birth?pet.date_of_birth:"not available"}</p>
+            <p>Birth: ${pet.date_of_birth?pet.date_of_birth:"not recorded"}</p>
             </div>
 
             <div class="flex justify-start items-center">
@@ -215,7 +215,7 @@ const displayDetails = (pet) => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <p>Price: ${pet.price?pet.price:"not found"}</p>
+                <p>Price: ${pet.price?pet.price:"not available"}</p>
             </div>
 <div class="divider">
 </div>
