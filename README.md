@@ -1,4 +1,4 @@
-# Project Name: Peddy
+# Project Name: Peddy 🐶
 
 ## Description
 Peddy is a web application designed for pet adoption, allowing users to browse and filter different types of pets, including dogs, cats, rabbits, and birds. Users can view detailed information about each pet, such as images, prices, and other essential details, making it easier to find their ideal furry friend. The app features sorting capabilities by price and provides a seamless user experience with loading animations and category filtering, helping potential adopters make informed decisions.
